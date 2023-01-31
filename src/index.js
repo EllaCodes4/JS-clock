@@ -16,6 +16,17 @@ function setDate() {
   const minutes = now.getMinutes();
   const minutesDegrees = (minutes / 60) * 360 + 90;
   minutesHand.style.transform = `rotate(${minutesDegrees}deg)`;
-}
 
+  if (secondsDegrees === 90) {
+    secondsHand.style.setProperty("transition", "none");
+  }
+
+  if (minutesDegrees === 90) {
+    minutesHand.style.setProperty("transition", "none");
+  }
+
+  if (hourDegrees === 90) {
+    hourHand.style.setProperty("transition", "none");
+  }
+}
 setInterval(setDate, 1000);
